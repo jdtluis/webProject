@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
 
-const PriceComparisonWidget = ({ stocks }) => {
+const PriceComparisonWidget = ({ stocks, onSelectionChange }) => {
   const [comparisonStocks, setComparisonStocks] = useState([]);
 
   // Convert stocks to options format for react-select
@@ -12,6 +12,7 @@ const PriceComparisonWidget = ({ stocks }) => {
 
   const handleSelectChange = (selectedOptions) => {
     setComparisonStocks(selectedOptions || []);
+    onSelectionChange(selectedOptions || []);
   };
 
   // Filter selected stocks to get detailed information

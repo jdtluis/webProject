@@ -1,7 +1,7 @@
 import React from 'react';
 
 const PriceSummaryWidget = ({ stocks }) => {
-  const prices = stocks.map(stock => stock.closingPrice);
+  const prices = stocks.map(stock => stock.settlementPrice);
   const averagePrice = (prices.reduce((sum, price) => sum + price, 0) / prices.length).toFixed(2);
   const highestPrice = Math.max(...prices).toFixed(2);
   const lowestPrice = Math.min(...prices).toFixed(2);
